@@ -95,6 +95,10 @@ p.home:hover {
 
 /* Responsive design for tablet size*/
 @media (max-width: 600px) {
+  body {
+    width: 400px;
+  }
+
   .backdrop-poster {
     width: 375px;
   }
