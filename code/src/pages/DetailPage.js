@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import ClipLoader from "react-spinners/ClipLoader";
 import './DetailPage.css';
+
 
 export const DetailPage = () => {
   const api_key = 'dcb0caab506cac37c3f7dc479ca8aee2';
@@ -18,13 +20,17 @@ export const DetailPage = () => {
         console.log(json);
         setDetails(json);
         setLoading(false);
-      });
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }, [movieId]);
 
   if (loading) {
     return (
       <h1 className="loading-message" style={{ color: 'white' }}>
-        LOADING
+        <ClipLoader color="white" loading={loading} size={60} />
+
       </h1>
     );
   }
@@ -32,7 +38,7 @@ export const DetailPage = () => {
   if (!details) {
     return <h1 style={{ color: 'white' }}>NO MOVIE</h1>;
   }
-
+ console.log(details.poster_path)
   return (
     <article className="detail-page-container">
       <Link className="home-button" to="/">

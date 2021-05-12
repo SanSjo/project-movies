@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { PopularList } from './pages/PopularList';
+import { Home } from './pages/Home';
 import { DetailPage } from './pages/DetailPage';
 
 export const App = () => {
@@ -8,10 +8,10 @@ export const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact>
-          <PopularList />
+          <Home />
         </Route>
         <Route path="/Upcoming">
-          <PopularList category="upcoming" />
+          <Home />
         </Route>
         <Route path="/movie/:movieId">
           <DetailPage />
@@ -20,3 +20,5 @@ export const App = () => {
     </BrowserRouter>
   );
 };
+
+export default App;

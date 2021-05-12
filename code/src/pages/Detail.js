@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const Detail = props => {
+  console.log(props.poster_path)
   return (
     <div className="movie-info-container">
       <img className="poster-image" src={props.movie} alt={props.poster_path} />
